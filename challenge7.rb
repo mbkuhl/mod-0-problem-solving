@@ -20,17 +20,52 @@ def tax_calculator(marital_status, income)
         24balance = (89075 - 41775) * 0.22 + 22balance
         32balance = (170050 - 89075) * 0.24 + 24balance
         35balance = (215950 - 170050) * 0.32 + 32balance
-        37balance =  * 0.35 + 35balance
+        37balance = (539900 - 215950) * 0.35 + 35balance
 
+        if income > 539900 
+            tax = (income - 539900) * 0.37 + 37balance
+        elsif income > 215950
+            tax = (income - 215950) * 0.35 + 35balance
+        elsif income > 170050
+            tax = (income - 170050) * 0.32 + 32balance
+        elsif income > 89075
+            tax = (income - 89075) * 0.24 + 24balance
+        elsif income > 41775
+            tax = (income - 41775) * 0.22 + 22balance
+        elsif income > 10275
+            tax = (income - 10275) * 0.12
+        else
+            tax = 0
+        end
 
     elsif marital_status == "married"
-        22balance = (83550 - 20550) * 0.12
-        24balance = (178150 - 83550) * 0.22 + 22balance
-        32balance = (340100 - 178150) * 0.24 + 24balance
-        35balance = (431900 - 340100) * 0.32 + 32balance
-        37balance = (647850 - 431900) * 0.35 + 35balance
+        22balancem = (83550 - 20550) * 0.12
+        24balancem = (178150 - 83550) * 0.22 + 22balancem
+        32balancem = (340100 - 178150) * 0.24 + 24balancem
+        35balancem = (431900 - 340100) * 0.32 + 32balancem
+        37balancem = (647850 - 431900) * 0.35 + 35balancem
         
+        if income > 647850 
+            tax = (income - 647850) * 0.37 + 37balancem
+        elsif income > 431900
+            tax = (income - 431900) * 0.35 + 35balancem
+        elsif income > 340100
+            tax = (income - 340100) * 0.32 + 32balancem
+        elsif income > 178150
+            tax = (income - 178150) * 0.24 + 24balancem
+        elsif income > 83550
+            tax = (income - 83550) * 0.22 + 22balancem
+        elsif income > 20550
+            tax = (income - 20550) * 0.12
+        else
+            tax = 0
+        end
+
     else
         puts "Please enter either 'Married' or 'Single' for marital status"
         return
     end
+    tax
+end
+
+    puts tax_calculator("married", 100000)
