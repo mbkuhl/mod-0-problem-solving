@@ -13,7 +13,9 @@
 
 string = "Ssssssnakeses"
 
-split_array = string.split("")
+def remove_s(input_string)
+
+split_array = input_string.split("")
 
 split_array
 
@@ -25,8 +27,12 @@ split_array = split_array.collect do |letter|
     end
 end
 
-string = split_array.join('')
+input_string = split_array.join('')
 
-p string
+input_string
+
+end
+
+p remove_s(string)
 
 
