@@ -16,22 +16,23 @@
 def tax_calculator(marital_status, income)
     marital_status = marital_status.downcase
     if marital_status == "single"
-        22balance = (41775 - 10275) * 0.12
-        24balance = (89075 - 41775) * 0.22 + 22balance
-        32balance = (170050 - 89075) * 0.24 + 24balance
-        35balance = (215950 - 170050) * 0.32 + 32balance
-        37balance = (539900 - 215950) * 0.35 + 35balance
-
+        b_three_bal = (41775 - 10275) * 0.12
+        b_four_bal = (89075 - 41775) * 0.22 + b_three_bal
+        b_five_bal = (170050 - 89075) * 0.24 + b_four_bal
+        b_six_bal = (215950 - 170050) * 0.32 + b_five_bal
+        b_seven_bal = (539900 - 215950) * 0.35 + b_six_bal
+        
+    
         if income > 539900 
-            tax = (income - 539900) * 0.37 + 37balance
+            tax = (income - 539900) * 0.37 + b_seven_bal
         elsif income > 215950
-            tax = (income - 215950) * 0.35 + 35balance
+            tax = (income - 215950) * 0.35 + b_six_bal
         elsif income > 170050
-            tax = (income - 170050) * 0.32 + 32balance
+            tax = (income - 170050) * 0.32 + b_five_bal
         elsif income > 89075
-            tax = (income - 89075) * 0.24 + 24balance
+            tax = (income - 89075) * 0.24 + b_four_bal
         elsif income > 41775
-            tax = (income - 41775) * 0.22 + 22balance
+            tax = (income - 41775) * 0.22 + b_three_bal
         elsif income > 10275
             tax = (income - 10275) * 0.12
         else
@@ -39,22 +40,22 @@ def tax_calculator(marital_status, income)
         end
 
     elsif marital_status == "married"
-        22balancem = (83550 - 20550) * 0.12
-        24balancem = (178150 - 83550) * 0.22 + 22balancem
-        32balancem = (340100 - 178150) * 0.24 + 24balancem
-        35balancem = (431900 - 340100) * 0.32 + 32balancem
-        37balancem = (647850 - 431900) * 0.35 + 35balancem
+        mb_three_bal = (83550 - 20550) * 0.12
+        mb_four_bal = (178150 - 83550) * 0.22 + mb_three_bal
+        mb_five_bal = (340100 - 178150) * 0.24 + mb_four_bal
+        mb_six_bal = (431900 - 340100) * 0.32 + mb_five_bal
+        mb_seven_bal = (647850 - 431900) * 0.35 + mb_six_bal
         
         if income > 647850 
-            tax = (income - 647850) * 0.37 + 37balancem
+            tax = (income - 647850) * 0.37 + mb_seven_bal
         elsif income > 431900
-            tax = (income - 431900) * 0.35 + 35balancem
+            tax = (income - 431900) * 0.35 + mb_six_bal
         elsif income > 340100
-            tax = (income - 340100) * 0.32 + 32balancem
+            tax = (income - 340100) * 0.32 + mb_five_bal
         elsif income > 178150
-            tax = (income - 178150) * 0.24 + 24balancem
+            tax = (income - 178150) * 0.24 + mb_four_bal
         elsif income > 83550
-            tax = (income - 83550) * 0.22 + 22balancem
+            tax = (income - 83550) * 0.22 + mb_three_bal
         elsif income > 20550
             tax = (income - 20550) * 0.12
         else
@@ -68,4 +69,6 @@ def tax_calculator(marital_status, income)
     tax
 end
 
-    puts tax_calculator("married", 100000)
+puts tax_calculator("siNgle", 1000000)
+puts tax_calculator("MARRIED", 1000000)
+puts tax_calculator("siNggle", 1000000)
